@@ -40,7 +40,7 @@ public class Mapa {
         return assentos;
     }
 
-    public void setAssentos(String[][] assentos) {
-        this.assentos = assentos;
+    public void setAssentos(int x, int y, String texto) {
+        assentos[x][y] = texto;
     }
 }

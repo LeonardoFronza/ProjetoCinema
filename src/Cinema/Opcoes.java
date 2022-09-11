@@ -9,11 +9,13 @@ public class Opcoes {
     }
 
     public void reservaAssento(char linha, int coluna){
-       int converte = (int)linha-65;
+        int converte = (int)linha-65;
 
-       if(mapa.getAssentos()[converte][coluna].equals('O')){
-           //mapa.setAssentos(mapa.getAssentos()[converte][linha]) = "X "; Erro
-        }
+        //if ()
+            System.out.println("Assento já reservado");
+
+        mapa.setAssentos(converte+1, coluna , "X ");
+        System.out.println(mapa.getAssentos()[converte][coluna].equals("X "));
     }
 
     public void cancelaReservaAssento(){
