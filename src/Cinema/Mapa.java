@@ -11,10 +11,14 @@ public class Mapa {
         if(linha <= 0 || coluna <= 0){
             return false;
         }
-
         assentos = new String[linha][coluna];
+        preencheMapa();
+        validaMapa = true;
+        return true;
+    }
 
-        for (int a = 0; a < assentos.length; a++) {
+	private void preencheMapa() {
+		for (int a = 0; a < assentos.length; a++) {
             for (int b= 0; b < assentos[0].length; b++){
                 assentos[a][b] = "O ";
             }
@@ -27,10 +31,7 @@ public class Mapa {
             assentos[0][b] = " " + b;
         }
         assentos[0][0] = " ";
-
-        validaMapa = true;
-        return true;
-    }
+	}
 
     public boolean isValidaMapa() {
         return validaMapa;

@@ -11,19 +11,30 @@ public class Opcoes {
     public void reservaAssento(char linha, int coluna){
         int converte = (int)linha-65;
 
-        //if ()
+        if(!mapa.getAssentos()[converte+1][coluna].equals("X "))
+            mapa.setAssentos(converte+1, coluna , "X ");
+        else
             System.out.println("Assento já reservado");
-
-        mapa.setAssentos(converte+1, coluna , "X ");
-        System.out.println(mapa.getAssentos()[converte][coluna].equals("X "));
     }
 
-    public void cancelaReservaAssento(){
+    public void cancelaReservaAssento(char linha, int coluna){
+        int converte = (int)linha-65;
 
+        if(!mapa.getAssentos()[converte+1][coluna].equals("X "))
+            mapa.setAssentos(converte+1, coluna , "O ");
+        else
+            System.out.println("Assento não estava reservado");
     }
 
     public void qtdAssentosLivreOcupado() {
+        int assentosLivres = 0, assentosOcupados = 0;
 
+        for (int i = 0; i < mapa.getAssentos().length; i++){
+                if(mapa.getAssentos().equals("x ")) {
+                    assentosLivres++;
+                }
+                assentosOcupados++;
+        }
     }
 
     public boolean imprimeMapa() {
